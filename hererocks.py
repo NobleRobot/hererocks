@@ -2295,7 +2295,7 @@ vs_setup_scripts = {
 
 def get_vs_setup_cmd(vs_version, arch):
     #vs_directory = get_vs_directory(vs_version)
-    vs_directory = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community"
+    vs_directory = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\Build"
 
     if vs_directory is not None:
         for script_path in vs_setup_scripts[arch]:
@@ -2309,7 +2309,8 @@ def get_vs_setup_cmd(vs_version, arch):
         if check_existence(vcvars_all_path):
             return 'call "{}"{}'.format(vcvars_all_path, " amd64" if arch == "x64" else "")
 
-    wsdk_directory = get_wsdk_directory(vs_version)
+    #wsdk_directory = get_wsdk_directory(vs_version)
+    wsdk_directory = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133"
 
     if wsdk_directory is not None:
         setenv_path = os.path.join(wsdk_directory, "bin", "setenv.cmd")
