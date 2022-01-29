@@ -2294,7 +2294,8 @@ vs_setup_scripts = {
 }
 
 def get_vs_setup_cmd(vs_version, arch):
-    vs_directory = get_vs_directory(vs_version)
+    #vs_directory = get_vs_directory(vs_version)
+    vs_directory = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community"
 
     if vs_directory is not None:
         for script_path in vs_setup_scripts[arch]:
